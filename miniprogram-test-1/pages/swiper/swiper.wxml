@@ -1,0 +1,63 @@
+      <swiper indicator-dots="{{indicatorDots}}"
+        autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}">
+        <block wx:for="{{imgUrls}}" wx:key="*this">
+          <swiper-item>
+            <image  src="{{item}}"   ></image>
+          </swiper-item>
+        </block>
+      </swiper>
+
+<view>
+
+ <text  decode="{{true}}" >&nbsp;&nbsp;&nbsp;</text>
+      <image  class='image-right' style="width:60px;height:60px"   src="../image/1.jpg"></image>
+
+       <image  class='image-right'  style="width:60px;height:60px"   src="../image/2.jpg"></image>
+           <image   class='image-right'  style="width:60px;height:60px"   src="../image/3.jpg"></image>
+               <image bindtap="onlineadd" class='image-right'  style="width:60px;height:60px"   src="../image/4.jpg"></image>
+               </view>
+               
+               <view>
+                <text  decode="{{true}}" >&nbsp;&nbsp;&nbsp;</text>
+               <text  class='text-right' >招生简章</text>
+              
+                 <text  class='text-right' >专业介绍</text>
+                   <text  class='text-right' >招生问答</text>
+                     <text class='text-right' bindtap="onlineadd" >在线申请</text>
+               </view>
+
+       <view>
+        <text  decode="{{true}}" >&nbsp;&nbsp;&nbsp;</text>
+       <label  class="zhaosheng-font">招生动态</label>
+       </view>       
+
+       <!-- <view class="kind-list">
+      <block wx:for-items="{{list}}" wx:key="{{item.id}}">
+        <view class="kind-list-item">
+          <view id="{{item.id}}" class="kind-list-item-hd {{item.open ? 'kind-list-item-hd-show' : ''}}" bindtap="kindToggle">
+            <view class="kind-list-text">{{item.name}}</view>
+            <image class="kind-list-img" src="resources/kind/{{item.id}}.png"></image>
+          </view>
+      
+        </view>
+      </block>
+    </view> -->
+<scroll-view>
+    <view  style='height:60px;width:100%'>
+    <image    style="width:80px;height:60px"   src="../image/2.jpg"></image>
+    <label  style='float:right;padding-right:90px;'>老名校迎来“新春天”</label>
+    <text style='position: relative;float:right;padding-right:50px;padding-button:150px; margin-top: -80;top:-70%'>------老名校迎来“新春天”</text>
+    <label  style='position: relative;float:right;padding-right:160px;top:-75%'>2019-6-3</label>
+    </view>
+ </scroll-view>
+ <!-- <view class="kind-list">
+      <block wx:for-items="{{list}}" wx:key="{{item.id}}">
+        <view class="kind-list-item">
+          <view id="{{item.id}}" class="kind-list-item-hd {{item.open ? 'kind-list-item-hd-show' : ''}}" bindtap="kindToggle">
+            <view class="kind-list-text">{{item.name}}</view>
+            <image class="kind-list-img" src="resources/kind/{{item.id}}.png"></image>
+          </view>
+       
+        </view>
+      </block>
+    </view> -->

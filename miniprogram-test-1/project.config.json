@@ -1,0 +1,49 @@
+{
+	"description": "项目配置文件",
+  // 打包配置选项
+	"packOptions": {
+		"ignore": []
+	},
+  // 项目设置
+	"setting": {
+		"urlCheck": true,
+		"es6": true,
+		"postcss": true,
+		"minified": true,
+		"newFeature": true,
+		"autoAudits": false,
+		"coverView": true
+	},
+  // 编译类型
+	"compileType": "miniprogram",
+	"libVersion": "2.0.4",
+  // 只在新建项目时读取
+	"appid": "wx05751c6ba231d4ec",
+  // 只在新建项目时读取
+	"projectname": "miniprogram-test-1",
+  // 调试配置选项
+	"debugOptions": {
+		"hidedInDevtools": []
+	},
+	"isGameTourist": false,
+	"simulatorType": "wechat",
+	"simulatorPluginLibVersion": {},
+	"condition": {
+		"search": {
+			"current": -1,
+			"list": []
+		},
+		"conversation": {
+			"current": -1,
+			"list": []
+		},
+		"game": {
+			"currentL": -1,
+			"list": []
+		},
+		"miniprogram": {
+			"current": -1,
+			"list": []
+		}
+	}
+}
