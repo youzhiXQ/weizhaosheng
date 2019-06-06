@@ -1,10 +1,8 @@
 {
 	"description": "项目配置文件",
-  // 打包配置选项
 	"packOptions": {
 		"ignore": []
 	},
-  // 项目设置
 	"setting": {
 		"urlCheck": true,
 		"es6": true,
@@ -14,14 +12,10 @@
 		"autoAudits": false,
 		"coverView": true
 	},
-  // 编译类型
 	"compileType": "miniprogram",
-	"libVersion": "2.0.4",
-  // 只在新建项目时读取
+	"libVersion": "2.7.1",
 	"appid": "wx05751c6ba231d4ec",
-  // 只在新建项目时读取
-	"projectname": "miniprogram-test-1",
-  // 调试配置选项
+	"projectname": "%E5%BE%AE%E6%8B%9B%E7%94%9F",
 	"debugOptions": {
 		"hidedInDevtools": []
 	},

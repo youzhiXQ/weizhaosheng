@@ -4,46 +4,45 @@
 
   <scroll-view class="page-body"    data-id="{{item.id}}">
     <form catchsubmit="formSubmit" catchreset="formReset">
-     <view wx:for="{{formdata}}" >
-<label >个人信息</label>
+   <block wx:for-items="{{formdata}}" wx:key="{{item.id}}">
 
-     
-       
-        <view  wx:if="{{item.fieldName=='姓名'}}" class="weui-cells weui-cells_after-title">
+<label wx:if="{{item.fieldName=='姓名'}}"  >个人信息</label>
+<label wx:elif="{{item.fieldName=='准考证号'||item.fieldName=='建档号'||item.fieldName=='总分'}}">考试信息</label>
+     <label wx:elif="{{item.fieldName=='需要住宿'||item.fieldName=='意向专业'}}" >意向信息</label>
+    
+        <view id="{{item.id}}"   class="weui-cells weui-cells_after-title">
           <view class="weui-cell weui-cell_input">
-             <label  >姓名</label>
+             <label  >{{item.fieldName}}</label>
             <view class="weui-cell__bd">
-              <input  wx:if="{{item.fieldType=='string'}}"  class="weui-input" name="input" placeholder="请输入考生姓名" />
-            </view>
-          
-          </view>
+            <!--  姓名-->
+              <input  wx:if="{{item.fieldType=='string'}}"  class="weui-input" name="input" placeholder="请输入{{item.fieldName}}" />
 
-          
+                <!-- 性别 -->
+                
+   
+            <view   wx:if="{{item.fieldType=='radiobox'}}">
+             <label class="radio">
+        <radio value="{{rediosss[0]}}" checked="true"/>{{rediosss[0]}}
+           <radio value="{{rediosss[1]}}" />{{rediosss[1]}}
+          </label>
+      
+            </view>
+
+
+  <view wx:if="{{item.fieldType=='switch'}}" class="weui-cell__bd">
+            <switch   wx:if="{{item.fieldType=='switch'}}"   name="switch"/>
+            </view>
+
+
+            </view>          
+          </view>
         </view>
       
  
        
-     
-      <!-- <view  wx:if="{{item.fieldName=='性别'}}" class="weui-cells weui-cells_after-title">
-          <view class="weui-cell weui-cell_input">
-             <label  >性别</label>
-            <view wx:if="{{item.fieldType=='radiobox'}}"  class="weui-cell__bd">
-             <label class="radio">
-        <radio value="r1" checked="true"/>{{item.fieldOption}}
-          </label>
-             <label class="radio">
-        <radio value="r2" />{{item.fieldOption}}
-          </label>
-             
-            </view>
-          </view>
-        </view> -->
+    
 
-
-     
-     
-
-
+<!-- 
 
   <view  wx:if="{{item.fieldName=='手机号'}}" class="weui-cells weui-cells_after-title">
           <view class="weui-cell weui-cell_input">
@@ -52,11 +51,11 @@
               <input   wx:if="{{item.fieldType=='string'}}"   class="weui-input" name="input" placeholder="请输入手机号" />
             </view>
           </view>
-        </view>
+        </view> -->
       
 
 
-
+<!-- 
  <view   wx:if="{{item.fieldName=='备用手机号'}}" class="weui-cells weui-cells_after-title">
           <view class="weui-cell weui-cell_input">
              <label  >备用手机号</label>
@@ -64,14 +63,14 @@
               <input  wx:if="{{item.fieldType=='string'}}"   class="weui-input" name="input" placeholder="请输入手机号" />
             </view>
           </view>
-        </view>
+        </view> -->
       
      
 
 
 
 
-
+<!-- 
 
   <view    wx:if="{{item.fieldName=='就读初中'}}" class="weui-cells weui-cells_after-title">
           <view class="weui-cell weui-cell_input">
@@ -80,13 +79,13 @@
               <input   wx:if="{{item.fieldType=='string'}}"  class="weui-input" name="input" placeholder="请输入就读初中" />
             </view>
           </view>
-        </view>
+        </view> -->
      
 
-<label>考证信息</label>
+<!-- <label wx:if="{{item.fieldName=='考生证号'}}">考证信息</label> -->
 
 
-
+<!-- 
   <view   wx:if="{{item.fieldName=='考生证号'}}" class="weui-cells weui-cells_after-title">
           <view class="weui-cell weui-cell_input">
              <label  >考生证号</label>
@@ -95,10 +94,10 @@
             </view>
           </view>
         </view>
-      
+       -->
       
 
-      
+<!--       
 
   <view  wx:if="{{item.fieldName=='建档号'}}" class="weui-cells weui-cells_after-title">
           <view class="weui-cell weui-cell_input">
@@ -107,11 +106,11 @@
               <input  wx:if="{{item.fieldType=='string'}}"   class="weui-input" name="input"   />
             </view>
           </view>
-        </view>
+        </view> -->
 
 
         
-
+<!-- 
   <view   wx:if="{{item.fieldName=='总分'}}" class="weui-cells weui-cells_after-title">
           <view class="weui-cell weui-cell_input">
              <label  >总分</label>
@@ -119,14 +118,14 @@
               <input   wx:if="{{item.fieldType=='string'}}"  class="weui-input" name="input"   />
             </view>
           </view>
-        </view>
+        </view> -->
  
       
       
-<label>意向信息</label>
+<!-- <label wx:if="{{item.fieldName=='需要住宿'}}" >意向信息</label> -->
 
    
-
+<!-- 
   <view   wx:if="{{item.fieldName=='需要住宿'}}" class="weui-cells weui-cells_after-title">
           <view class="weui-cell weui-cell_input">
              <label  >需要住宿</label>
@@ -134,9 +133,9 @@
             <switch   wx:if="{{item.fieldType=='switch'}}"   name="switch"/>
             </view>
           </view>
-        </view>
+        </view> -->
 
-
+</block>
       
       <view class="btn-area">
         <button type="primary" formType="submit">立即提交</button>
@@ -144,7 +143,7 @@
 
 
 
-</view>
+
 
     </form>
   </scroll-view>

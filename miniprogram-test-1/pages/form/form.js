@@ -24,11 +24,24 @@ Page({
       success: function (res) {
         //--init data
         var status = res.data.code;
+        var date = res.data.data;
+        var redioss = new Array();
         if (status == 1) {
+          for (var i = 0; i < date.length; i++) {
+            if (date[i].fieldType == "radiobox") {
+              var rediojson = JSON.parse(date[i].fieldOption);
+              for (var j = 0; j < rediojson.length; j++) {
+                redioss[j] = rediojson[j].name;
+              }
+            }
+          };
           that.setData({
-            formdata: res.data.data
-        
+            formdata: date,
+            rediosss: redioss,
           })
+        
+         
+          console.log(redioss);
          
         } else {
           wx.showToast({
@@ -72,7 +85,8 @@ Page({
   },
 
   formSubmit(e) {
-    console.log('form发生了submit事件，携带数据为：', e.detail.value)
+    console.log('form发生了submit事件，携带数据为：', e);
+    // console.log('form发生了submit事件，携带数据为：', e.detail.value);
   },
 
   formReset(e) {
